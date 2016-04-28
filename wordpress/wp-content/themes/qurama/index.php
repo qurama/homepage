@@ -100,7 +100,7 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/1.jpg" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portfolio/1.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -111,7 +111,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -121,7 +122,7 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="400ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/2.jpg" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portfolio/2.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -132,7 +133,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -142,7 +144,8 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="500ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/3.jpg" alt="">
+          <img class="img-responsive" 
+          src="<?php echo IMAGE_PATH . '/portfolio/3.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -153,7 +156,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details-2.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details-2.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -163,7 +167,7 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="600ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/4.jpg" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portfolio/4.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -174,7 +178,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -184,7 +189,7 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="700ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/5.jpg" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portfolio/5.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -195,7 +200,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -205,7 +211,7 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="800ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/6.jpg" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portfolio/6.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -216,7 +222,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -226,7 +233,7 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInRightBig" data-wow-duration="1000ms" data-wow-delay="900ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/7.jpg" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portfolio/7.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -237,7 +244,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -247,7 +255,7 @@
     <div class="col-sm-3">
       <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="1000ms">
         <div class="folio-image">
-          <img class="img-responsive" src="images/portfolio/8.jpg" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portfolio/8.jpg'; ?>" alt="">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -258,7 +266,8 @@
               </div>
               <div class="folio-overview">
                 <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
-                <span class="folio-expand"><a href="images/portfolio/portfolio-details.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portfolio/portfolio-details.jpg'; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>
@@ -286,7 +295,7 @@
       <div class="col-sm-3">
         <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
           <div class="member-image">
-            <img class="img-responsive" src="images/team/1.jpg" alt="">
+            <img class="img-responsive" src="<?php echo IMAGE_PATH . '/team/1.jpg'; ?>" alt="">
           </div>
           <div class="member-info">
             <h3>Mochamad Iqbal Kurniawan</h3>
@@ -304,7 +313,8 @@
       <div class="col-sm-3">
         <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
           <div class="member-image">
-            <img class="img-responsive" src="images/team/2.jpg" alt="">
+            <img class="img-responsive" 
+            src="<?php echo IMAGE_PATH . '/team/2.jpg'; ?>" alt="">
           </div>
           <div class="member-info">
             <h3>Darul Sandi</h3>
@@ -322,7 +332,7 @@
       <div class="col-sm-3">
         <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
           <div class="member-image">
-            <img class="img-responsive" src="images/team/3.jpg" alt="">
+            <img class="img-responsive" src="<?php echo IMAGE_PATH . '/team/3.jpg'; ?>" alt="">
           </div>
           <div class="member-info">
             <h3>Mochamad Deden</h3>
@@ -341,7 +351,7 @@
       <div class="col-sm-3">
         <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
           <div class="member-image">
-            <img class="img-responsive" src="images/team/4.jpg" alt="">
+            <img class="img-responsive" src="<?php echo IMAGE_PATH . '/team/4.jpg'; ?>" alt="">
           </div>
           <div class="member-info">
             <h3>Rendi Rizki</h3>

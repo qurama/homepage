@@ -21,7 +21,7 @@
   <![endif]-->
   
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="shortcut icon" href="<?php echo IMAGE_PATH .'/favicon.png'; ?>">
 </head><!--/head-->
 
 <body>
@@ -33,21 +33,24 @@
   <header id="home">
     <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="item active" style="background-image: url(images/slider/1.jpg)">
+        <div class="item active" style="background-image: url(
+        <?php echo IMAGE_PATH .'/slider/1.jpg)'; ?>">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Qurama <span>Studios</span></h1>
             <p class="animated fadeInRightBig">Application And Design Solution</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
-        <div class="item" style="background-image: url(images/slider/2.jpg)">
+        <div class="item" style="background-image: url(
+        <?php echo IMAGE_PATH .'/slider/2.jpg)'; ?>">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Say Hello to <span>Qurama</span></h1>
             <p class="animated fadeInRightBig">Application And Design Solution</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
-        <div class="item" style="background-image: url(images/slider/3.jpg)">
+        <div class="item" style="background-image: url(
+          <?php echo IMAGE_PATH .'/slider/3.jpg)'; ?>">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">We are <span>Human</span></h1>
             <p class="animated fadeInRightBig">Application And Design Solution</p>
@@ -71,7 +74,8 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.html">
-            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+            <h1><img class="img-responsive" 
+            src="<?php echo IMAGE_PATH .'/logo.png'; ?>" alt="logo"></h1>
           </a>                    
         </div>
         <div class="collapse navbar-collapse">

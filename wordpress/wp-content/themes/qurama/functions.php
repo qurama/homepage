@@ -99,3 +99,5 @@ function add_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'add_scripts');
+
+define(IMAGE_PATH, get_template_directory_uri() . '/images');

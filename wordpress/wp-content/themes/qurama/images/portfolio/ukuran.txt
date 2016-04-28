@@ -1,2 +1,0 @@
-thumbnail : 350 x 280 px
-details   : 970 x 496 px

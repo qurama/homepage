@@ -26,30 +26,11 @@
   <header id="home">
     <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="item active" style="background-image: url(
-        <?php echo IMAGE_PATH .'/slider/1.jpg)'; ?>">
-          <div class="caption">
-            <h1 class="animated fadeInLeftBig">Qurama <span>Studios</span></h1>
-            <p class="animated fadeInRightBig">Application And Design Solution</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
-          </div>
-        </div>
-        <div class="item" style="background-image: url(
-        <?php echo IMAGE_PATH .'/slider/2.jpg)'; ?>">
-          <div class="caption">
-            <h1 class="animated fadeInLeftBig">We make <span>Art</span></h1>
-            <p class="animated fadeInRightBig">For us software is more than just computer instruction is an art</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
-          </div>
-        </div>
-        <div class="item" style="background-image: url(
-          <?php echo IMAGE_PATH .'/slider/3.jpg)'; ?>">
-          <div class="caption">
-            <h1 class="animated fadeInLeftBig">Customer is a <span> king</span></h1>
-            <p class="animated fadeInRightBig">we listen you because you are the king</p>
-            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
-          </div>
-        </div>
+          <?php 
+              if ( is_active_sidebar( 'slider_widget_area' ) ) : 
+                  dynamic_sidebar('slider_widget_area');
+              endif;
+          ?>
       </div>
       <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
       <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
@@ -66,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="#">
             <h1><img class="img-responsive" 
             src="<?php echo IMAGE_PATH .'/logo.png'; ?>" alt="logo"></h1>
           </a>                    

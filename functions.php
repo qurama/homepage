@@ -9,6 +9,30 @@ define('CSS_PATH', get_template_directory_uri().'/css');
 define('JS_PATH', get_template_directory_uri().'/js');
 define('IMAGE_PATH', get_template_directory_uri() . '/images');
 
+add_shortcode('slider', function($atts, $content) {
+	$a = shortcode_atts( array(
+		'image' => '',
+		'title' => '',
+		'title-imp' => '',
+		'active' => ''
+	), $atts );
+	if($a['active'] == 'active')
+		$active = $a['active'];
+	else
+		$active = '';
+	?>
+	<div class="item <?php echo $active ?>" style="background-image: url(
+        <?php echo "'" . IMAGE_PATH .'/slider'.'/'.$a['image']."'".');'; ?>">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig"><?php echo $a['title'] ?> 
+            	<span> <?php echo $a['title-imp'] ?></span></h1>
+            <p class="animated fadeInRightBig"><?php echo $content ?></p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
+          </div>
+    </div>
+    <?php
+});
+
 add_shortcode('portofolio', function ($atts, $content) {
 	$a = shortcode_atts( array(
 		'preview' => '',
@@ -195,53 +219,19 @@ add_action('wp_enqueue_scripts', function() {
 	enqueue_scripts();
 });
 
-class About_Widget extends WP_Widget {
-
-
-	public function __construct() {
-		$widget_ops = array( 
-			'classname' => 'about_widget',
-			'description' => 'Keur about us',
-		);
-		parent::__construct( 'about_widget', 'About Widget', $widget_ops );
-	}
-
-
-	public function widget( $args, $instance ) {
-		echo $args['before_widget'].$args['before_title']
-			.$instance['title'].$args['after_title'].'<br />'
-			.$instance['content'].$args['after_widget'];
-	}
-
-	public function form( $instance ) {
-		$title = empty($instance['title']) ? '' : $instance['title'];
-		$content = empty($instance['content']) ? '' : $instance['content'];
-	
-		echo '<label for="'.$this->get_field_name('title').'">'.'Title'.'</label>'.
-			 '<input type="text" class="widefat" id="'.$this->get_field_id('title').
-			 '" name="'.$this->get_field_name('title').
-			 '" value="'.$title.'"/>'.
-			 '<label for="'.$this->get_field_name('conten').'">'.'Content'.'</label>'.
-			 '<textarea id="'.$this->get_field_id('content').
-			 '"class="widefat" name="'.$this->get_field_name('content').
-		 	 '">'.$content.'</textarea>';
-	}
-
-	public function update( $new_instance, $old_instance ) {
-		return $new_instance;
-	}
-}
-
 add_action( 'widgets_init', function() {
-	register_widget( 'About_Widget' );
-	
+
+	register_sidebar( array(
+		'name'          => 'Slider Widget Area',
+		'id'            => 'slider_widget_area'
+	) );
 
 	register_sidebar( array(
 		'name'          => 'Service Widget Area',
 		'id'            => 'service_widget_area'
 	) );
 
-		
+
 	register_sidebar( array(
 		'name'          => 'About Widget Area',
 		'id'            => 'about_widget_area',
@@ -270,31 +260,4 @@ add_action( 'widgets_init', function() {
 
 } );
 
-class Portofolio_Widget extends WP_Widget {
-	public function __construct() {
-		$widget_ops = array( 
-			'classname' => 'portofolio_widget',
-			'description' => 'Keur potofolio',
-		);
-		parent::__construct( 
-			'portofolio_widget',
-			'Portofolio Widget', 
-			$widget_ops );
-	}
-
-	public function form( $instance ) {
-		$title = empty($instance['title']) ? '' : $instance['title'];
-		$content_header = empty($instance['content_header']) ? '' : $instance['content_header'];
-	
-		echo '<label for="'.$this->get_field_name('title').'">'.'Title'.'</label>'.
-			 '<input type="text" class="widefat" id="'.$this->get_field_id('title').
-			 '" name="'.$this->get_field_name('title').
-			 '" value="'.$title.'"/>'.
-			 '<label for="'.$this->get_field_name('conten').'">'.'Content'.'</label>'.
-			 '<textarea id="'.$this->get_field_id('content').
-			 '"class="widefat" name="'.$this->get_field_name('content').
-		 	 '">'.$content.'</textarea>';
-	}
-	
-}
 

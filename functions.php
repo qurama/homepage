@@ -4,10 +4,79 @@
 * homepage : http://selesdepselesnul.com
 * company  : qurama studios
 */
-
+add_filter('widget_text', 'do_shortcode');
 define('CSS_PATH', get_template_directory_uri().'/css');
 define('JS_PATH', get_template_directory_uri().'/js');
 define('IMAGE_PATH', get_template_directory_uri() . '/images');
+
+add_shortcode('portofolio', function ($atts, $content) {
+	$a = shortcode_atts( array(
+		'preview' => '',
+		'detail' => '',
+		'title' => ''
+	), $atts );
+	?>
+	<div class="col-sm-3">
+      <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="400ms">
+        <div class="folio-image">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portofolio/preview' . '/' . $a['preview']; ?>" alt="">
+        </div>
+        <div class="overlay">
+          <div class="overlay-content">
+            <div class="overlay-text">
+              <div class="folio-info">
+                <h3><?php echo $a['title'];?></h3>
+                <p><?php echo $content;?></p>
+              </div>
+              <div class="folio-overview">
+                <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
+                <span class="folio-expand">
+                <a href="<?php echo IMAGE_PATH . '/portofolio/detail'. '/'.$a['detail']; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php	
+});
+
+add_shortcode('team', function($atts) {
+	  $a = shortcode_atts( array(
+	  	'photo' => '',
+		'name' => '',
+		'job' => '',
+		'facebook' => '',
+		'twitter' => '',
+		'github' => ''
+	  ), $atts );
+	  ?>
+	  <div class="col-sm-3">
+        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
+          <div class="member-image">
+            <img class="img-responsive" src="<?php echo IMAGE_PATH . '/team'.'/'.$a['photo'] ?>" alt="">
+          </div>
+          <div class="member-info">
+            <h3><?php echo $a['name'];?></h3>
+            <h4><?php echo $a['job'];?></h4>       
+          </div>
+          <div class="social-icons">
+            <ul>
+              <?php if(!empty($a['facebook'])):?>
+              	     <li><a class="facebook" href="<?php echo $a['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+              <?php endif;?>
+              <?php if(!empty($a['twitter'])):?>
+              	     <li><a class="twitter" href="<?php echo $a['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+              <?php endif;?>
+              <?php if(!empty($a['github'])):?>
+              	     <li><a class="github" href="<?php echo $a['github'] ?>"><i class="fa fa-github"></i></a></li>
+              <?php endif;?>        
+            </ul>
+          </div>
+        </div>
+      </div>
+      <?php
+});
 
 function enqueue_styles() {
 	wp_enqueue_style('bootstrap.min', CSS_PATH . '/bootstrap.min.css');
@@ -90,9 +159,7 @@ add_action('wp_enqueue_scripts', function() {
 
 class About_Widget extends WP_Widget {
 
-	/**
-	 * Sets up the widgets name etc
-	 */
+
 	public function __construct() {
 		$widget_ops = array( 
 			'classname' => 'about_widget',
@@ -101,40 +168,27 @@ class About_Widget extends WP_Widget {
 		parent::__construct( 'about_widget', 'About Widget', $widget_ops );
 	}
 
-		/**
-	 * Outputs the content of the widget
-	 *
-	 * @param array $args
-	 * @param array $instance
-	 */
+
 	public function widget( $args, $instance ) {
-		// outputs the content of the widget
+		echo $args['before_widget'].$args['before_title']
+			.$instance['title'].$args['after_title'].'<br />'
+			.$instance['content'].$args['after_widget'];
 	}
 
-	/**
-	 * Outputs the options form on admin
-	 *
-	 * @param array $instance The widget options
-	 */
 	public function form( $instance ) {
 		$title = empty($instance['title']) ? '' : $instance['title'];
 		$content = empty($instance['content']) ? '' : $instance['content'];
-		$title_id = $this->get_field_id('title');	
-		$content_id = $this->get_field_id('content');
-		echo '<input type="text" class="widefat" id="'.$this->get_field_id('title').
+	
+		echo '<label for="'.$this->get_field_name('title').'">'.'Title'.'</label>'.
+			 '<input type="text" class="widefat" id="'.$this->get_field_id('title').
 			 '" name="'.$this->get_field_name('title').
 			 '" value="'.$title.'"/>'.
+			 '<label for="'.$this->get_field_name('conten').'">'.'Content'.'</label>'.
 			 '<textarea id="'.$this->get_field_id('content').
 			 '"class="widefat" name="'.$this->get_field_name('content').
 		 	 '">'.$content.'</textarea>';
 	}
 
-	/**
-	 * Processing widget options on save
-	 *
-	 * @param array $new_instance The new options
-	 * @param array $old_instance The previous options
-	 */
 	public function update( $new_instance, $old_instance ) {
 		return $new_instance;
 	}
@@ -142,6 +196,7 @@ class About_Widget extends WP_Widget {
 
 add_action( 'widgets_init', function() {
 	register_widget( 'About_Widget' );
+	
 	register_sidebar( array(
 		'name'          => 'About Widget Area',
 		'id'            => 'about_widget_area',
@@ -150,5 +205,46 @@ add_action( 'widgets_init', function() {
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>'
 	) );
+	
+	register_sidebar( array(
+		'name'          => 'Portofolio Widget Area',
+		'id'            => 'portofolio_widget_area'
+	) );	
+
+	register_sidebar( array(
+		'name'          => 'Team Widget Area',
+		'id'            => 'team_widget_area'
+	) );	
+
+
+
 } );
+
+class Portofolio_Widget extends WP_Widget {
+	public function __construct() {
+		$widget_ops = array( 
+			'classname' => 'portofolio_widget',
+			'description' => 'Keur potofolio',
+		);
+		parent::__construct( 
+			'portofolio_widget',
+			'Portofolio Widget', 
+			$widget_ops );
+	}
+
+	public function form( $instance ) {
+		$title = empty($instance['title']) ? '' : $instance['title'];
+		$content_header = empty($instance['content_header']) ? '' : $instance['content_header'];
+	
+		echo '<label for="'.$this->get_field_name('title').'">'.'Title'.'</label>'.
+			 '<input type="text" class="widefat" id="'.$this->get_field_id('title').
+			 '" name="'.$this->get_field_name('title').
+			 '" value="'.$title.'"/>'.
+			 '<label for="'.$this->get_field_name('conten').'">'.'Content'.'</label>'.
+			 '<textarea id="'.$this->get_field_id('content').
+			 '"class="widefat" name="'.$this->get_field_name('content').
+		 	 '">'.$content.'</textarea>';
+	}
+	
+}
 

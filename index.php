@@ -10,7 +10,12 @@
   </div>
   <div class="text-center our-services">
     <div class="row">
-      <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <?php 
+          if ( is_active_sidebar( 'service_widget_area' ) ) : 
+              dynamic_sidebar('service_widget_area');
+          endif;
+      ?>
+<!--       <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="service-icon">
           <i class="fa fa-html5"></i>
         </div>
@@ -63,7 +68,7 @@
           <h3>Videographic</h3>
           <p>Kami juga membuat video untuk kebutuhan promosi perusahaan, wedding dan bisa disesuaikan dengan pesanan</p>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -76,12 +81,8 @@
         <?php 
               if ( is_active_sidebar( 'about_widget_area' ) ) : 
                   dynamic_sidebar('about_widget_area');
-              else:
+              endif;
         ?>
-                   <h2>About us</h2>
-                   <p>Kami membangun beberapa jenis aplikasi dan desain. Diantaranya yaitu website, desktop aplikasi, android aplikasi, desain logo, brand packaging serta pembuatan video untuk keperluan promosi usaha atau lain-lain. </p>
-                   <p>Selain itu dengan semangat spartan kami juga membangun Wordpress Theme dan Plugin yang kami desain secara profesional serta dengan fungsi yang akan sangat membantu client. Para pengembang kami adalah orang-orang yang berpengalaman di bidangnya masing-masing</p>
-        <?php endif;?>
       </div>
    
 
@@ -126,81 +127,6 @@
             dynamic_sidebar('team_widget_area');
           endif;
         ?>
-<!--       <div class="col-sm-3">
-        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
-          <div class="member-image">
-            <img class="img-responsive" src="<?php echo IMAGE_PATH . '/team/1.jpg'; ?>" alt="">
-          </div>
-          <div class="member-info">
-            <h3>Mochamad Iqbal Kurniawan</h3>
-            <h4>CEO &amp; Founder</h4>
-          </div>
-          <div class="social-icons">
-            <ul>
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
-          <div class="member-image">
-            <img class="img-responsive" 
-            src="<?php echo IMAGE_PATH . '/team/2.jpg'; ?>" alt="">
-          </div>
-          <div class="member-info">
-            <h3>Darul Sandi</h3>
-            <h4>Product Manager</h4>
-          </div>
-          <div class="social-icons">
-            <ul>
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
-          <div class="member-image">
-            <img class="img-responsive" src="<?php echo IMAGE_PATH . '/team/3.jpg'; ?>" alt="">
-          </div>
-          <div class="member-info">
-            <h3>Mochamad Deden</h3>
-            <h4>Analyst & Programmer</h4>
-            
-          </div>
-          <div class="social-icons">
-            <ul>
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
-          <div class="member-image">
-            <img class="img-responsive" src="<?php echo IMAGE_PATH . '/team/4.jpg'; ?>" alt="">
-          </div>
-          <div class="member-info">
-            <h3>Rendi Rizki</h3>
-            <h4>UI/UX Designer</h4>
-            
-          </div>
-          <div class="social-icons">
-            <ul>
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              
-            </ul>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>            
 </div>
@@ -247,10 +173,6 @@
           <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
             <p>Untuk memudahkan Anda dalam pemesanan, bisa menghubungi melalui email atau datang langsung di kantor kami.</p>
             <ul class="address">
-            <!--   <li><i class="fa fa-map-marker"></i> <span> Address:</span> Jl. Pakar Barat 1 No 37, Bandung</li>
-              <li><i class="fa fa-phone"></i> <span> Phone:</span> +62 896 2426 9426</li>
-              <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:quramastudios@gmail.com"> quramastudios@gmail.com</a></li>
-              <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.quramastudios.com</a></li> -->
             <?php 
                 if ( is_active_sidebar( 'contact_widget_area' ) ) : 
                   dynamic_sidebar('contact_widget_area');

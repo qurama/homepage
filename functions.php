@@ -87,12 +87,32 @@ add_shortcode('contact', function($atts) {
 		'twitter' => ''
 	), $atts );
 	?>
-	<li><i class="fa fa-map-marker"></i> <span> Address:</span> <?php echo $a['address']?></li>
-    <li><i class="fa fa-phone"></i> <span> Phone:</span> <?php echo $a['phone']?></li>
-    <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:<?php echo $a['email']?>"> <?php echo $a['email']?></a></li>
-    <li><i class="fa fa-facebook"></i> <span> Facebook:</span> <a href="<?php echo $a['facebook']?>"><?php echo $a['facebook']?></a></li>
-    <li><i class="fa fa-twitter"></i> <span> Twitter:</span> <a href="<?php echo $a['twitter']?>"><?php echo $a['twitter']?></a></li>
+	<li><i class="fa fa-map-marker"></i> <?php echo $a['address']?></li>
+    <li><i class="fa fa-phone"></i> <?php echo $a['phone']?></li>
+    <li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $a['email']?>"> <?php echo $a['email']?></a></li>
+    <li><i class="fa fa-facebook"></i><a href="<?php echo $a['facebook']?>"> <?php echo $a['facebook']?></a></li>
+    <li><i class="fa fa-twitter"></i><a href="<?php echo $a['twitter']?>"> <?php echo $a['twitter']?></a></li>
 	<?php        
+});
+
+add_shortcode('service', function($atts, $content) {
+	  
+	$a = shortcode_atts( array(
+	  	'icon' => '',
+	  	'title' => ''
+	), $atts );
+	?>	
+
+	<div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="450ms">
+	<div class="service-icon">
+	  <i class="fa fa-<?php echo $a['icon'] ?>"></i>
+	</div>
+	<div class="service-info">
+	  <h3><?php echo $a['title'] ?></h3>
+	  <p><?php echo $content ?></p>
+	</div>
+	</div>
+    <?php
 });
 
 function enqueue_styles() {
@@ -215,6 +235,13 @@ class About_Widget extends WP_Widget {
 add_action( 'widgets_init', function() {
 	register_widget( 'About_Widget' );
 	
+
+	register_sidebar( array(
+		'name'          => 'Service Widget Area',
+		'id'            => 'service_widget_area'
+	) );
+
+		
 	register_sidebar( array(
 		'name'          => 'About Widget Area',
 		'id'            => 'about_widget_area',
@@ -224,6 +251,7 @@ add_action( 'widgets_init', function() {
 		'after_title'   => '</h2>'
 	) );
 	
+
 	register_sidebar( array(
 		'name'          => 'Portofolio Widget Area',
 		'id'            => 'portofolio_widget_area'

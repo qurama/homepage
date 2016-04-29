@@ -5,16 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Qurama Studios</title>
+  <title><?php echo get_bloginfo('name') ?></title>
   <?php wp_head(); ?>
-<!--   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/animate.min.css" rel="stylesheet"> 
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/lightbox.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
-  <link href="css/responsive.css" rel="stylesheet">
- -->
+
   <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -44,16 +37,16 @@
         <div class="item" style="background-image: url(
         <?php echo IMAGE_PATH .'/slider/2.jpg)'; ?>">
           <div class="caption">
-            <h1 class="animated fadeInLeftBig">Say Hello to <span>Qurama</span></h1>
-            <p class="animated fadeInRightBig">Application And Design Solution</p>
+            <h1 class="animated fadeInLeftBig">We make <span>Art</span></h1>
+            <p class="animated fadeInRightBig">For us software is more than just computer instruction is an art</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
         <div class="item" style="background-image: url(
           <?php echo IMAGE_PATH .'/slider/3.jpg)'; ?>">
           <div class="caption">
-            <h1 class="animated fadeInLeftBig">We are <span>Human</span></h1>
-            <p class="animated fadeInRightBig">Application And Design Solution</p>
+            <h1 class="animated fadeInLeftBig">Customer is a <span> king</span></h1>
+            <p class="animated fadeInRightBig">we listen you because you are the king</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>

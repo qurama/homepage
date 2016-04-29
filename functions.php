@@ -78,6 +78,23 @@ add_shortcode('team', function($atts) {
       <?php
 });
 
+add_shortcode('contact', function($atts) {
+	$a = shortcode_atts( array(
+	  	'address' => '',
+		'phone' => '',
+		'email' => '',
+		'facebook' => '',
+		'twitter' => ''
+	), $atts );
+	?>
+	<li><i class="fa fa-map-marker"></i> <span> Address:</span> <?php echo $a['address']?></li>
+    <li><i class="fa fa-phone"></i> <span> Phone:</span> <?php echo $a['phone']?></li>
+    <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:<?php echo $a['email']?>"> <?php echo $a['email']?></a></li>
+    <li><i class="fa fa-facebook"></i> <span> Facebook:</span> <a href="<?php echo $a['facebook']?>"><?php echo $a['facebook']?></a></li>
+    <li><i class="fa fa-twitter"></i> <span> Twitter:</span> <a href="<?php echo $a['twitter']?>"><?php echo $a['twitter']?></a></li>
+	<?php        
+});
+
 function enqueue_styles() {
 	wp_enqueue_style('bootstrap.min', CSS_PATH . '/bootstrap.min.css');
 	wp_enqueue_style('animate.min', CSS_PATH . '/animate.min.css', 
@@ -93,6 +110,7 @@ function enqueue_styles() {
 	wp_enqueue_style('responsive', CSS_PATH . '/responsive.css', 
 		array('css-preset'));
 }
+
 
 
 function enqueue_scripts() {
@@ -216,6 +234,10 @@ add_action( 'widgets_init', function() {
 		'id'            => 'team_widget_area'
 	) );	
 
+	register_sidebar( array(
+		'name'          => 'Contact Widget Area',
+		'id'            => 'contact_widget_area'
+	) );	
 
 
 } );

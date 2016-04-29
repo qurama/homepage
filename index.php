@@ -247,10 +247,15 @@
           <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
             <p>Untuk memudahkan Anda dalam pemesanan, bisa menghubungi melalui email atau datang langsung di kantor kami.</p>
             <ul class="address">
-              <li><i class="fa fa-map-marker"></i> <span> Address:</span> Jl. Pakar Barat 1 No 37, Bandung</li>
+            <!--   <li><i class="fa fa-map-marker"></i> <span> Address:</span> Jl. Pakar Barat 1 No 37, Bandung</li>
               <li><i class="fa fa-phone"></i> <span> Phone:</span> +62 896 2426 9426</li>
               <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:quramastudios@gmail.com"> quramastudios@gmail.com</a></li>
-              <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.quramastudios.com</a></li>
+              <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.quramastudios.com</a></li> -->
+            <?php 
+                if ( is_active_sidebar( 'contact_widget_area' ) ) : 
+                  dynamic_sidebar('contact_widget_area');
+                endif;
+            ?>
             </ul>
           </div>                            
         </div>

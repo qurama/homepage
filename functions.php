@@ -5,8 +5,9 @@
 * company  : qurama studios
 */
 
-
 define(CSS_PATH, get_template_directory_uri().'/css');
+define(JS_PATH, get_template_directory_uri().'/js');
+define(IMAGE_PATH, get_template_directory_uri() . '/images');
 
 function enqueue_styles() {
 	wp_enqueue_style('bootstrap.min', CSS_PATH . '/bootstrap.min.css');
@@ -24,17 +25,6 @@ function enqueue_styles() {
 		array('css-preset'));
 }
 
-  // <script type="text/javascript" src="js/jquery.js"></script> !
-  // <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  // <script type="text/javascript" src="js/wow.min.min.js"></script>
-  // <script type="text/javascript" src="js/wow.min.js"></script>
-  // <script type="text/javascript" src="js/mousescroll.js"></script>
-  // <script type="text/javascript" src="js/smoothscroll.js"></script>
-  // <script type="text/javascript" src="js/jquery.countTo.js"></script>
-  // <script type="text/javascript" src="js/lightbox.min.js"></script>
-  // <script type="text/javascript" src="js/main.js"></script>
-
-define(JS_PATH, get_template_directory_uri().'/js');
 
 function enqueue_scripts() {
 	wp_enqueue_script( 
@@ -93,11 +83,19 @@ function enqueue_scripts() {
 		true);
 }
 
-function add_scripts() {
+add_action('wp_enqueue_scripts', function() {
 	enqueue_styles();
 	enqueue_scripts();
-}
+});
 
-add_action('wp_enqueue_scripts', 'add_scripts');
+add_action( 'widgets_init', function() {
+	register_sidebar( array(
+		'name'          => 'About Widget',
+		'id'            => 'about_widget',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>'
+	) );
+} );
 
-define(IMAGE_PATH, get_template_directory_uri() . '/images');

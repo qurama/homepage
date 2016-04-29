@@ -71,16 +71,20 @@
 <section id="about-us" class="parallax">
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+
       <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-        <h2>About us</h2>
-        <p>Kami membangun beberapa jenis aplikasi dan desain. Diantaranya yaitu website, desktop aplikasi, android aplikasi, desain logo, brand packaging serta pembuatan video untuk keperluan promosi usaha atau lain-lain. </p>
-        <p>Selain itu dengan semangat spartan kami juga membangun Wordpress Theme dan Plugin yang kami desain secara profesional serta dengan fungsi yang akan sangat membantu client. Para pengembang kami adalah orang-orang yang berpengalaman di bidangnya masing-masing</p>
+        <?php 
+              if ( is_active_sidebar( 'about_widget' ) ) : 
+                  dynamic_sidebar('about_widget');
+              else:
+        ?>
+                   <h2>About us</h2>
+                   <p>Kami membangun beberapa jenis aplikasi dan desain. Diantaranya yaitu website, desktop aplikasi, android aplikasi, desain logo, brand packaging serta pembuatan video untuk keperluan promosi usaha atau lain-lain. </p>
+                   <p>Selain itu dengan semangat spartan kami juga membangun Wordpress Theme dan Plugin yang kami desain secara profesional serta dengan fungsi yang akan sangat membantu client. Para pengembang kami adalah orang-orang yang berpengalaman di bidangnya masing-masing</p>
+        <?php endif;?>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <iframe width="560" height="350" src="https://www.youtube.com/embed/GrBFNqIs0dc" frameborder="0" allowfullscreen></iframe>
-      </div>
+   
+
     </div>
   </div>
 </div>

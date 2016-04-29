@@ -74,8 +74,8 @@
 
       <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <?php 
-              if ( is_active_sidebar( 'about_widget' ) ) : 
-                  dynamic_sidebar('about_widget');
+              if ( is_active_sidebar( 'about_widget_area' ) ) : 
+                  dynamic_sidebar('about_widget_area');
               else:
         ?>
                    <h2>About us</h2>

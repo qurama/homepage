@@ -5,9 +5,9 @@
 * company  : qurama studios
 */
 
-define(CSS_PATH, get_template_directory_uri().'/css');
-define(JS_PATH, get_template_directory_uri().'/js');
-define(IMAGE_PATH, get_template_directory_uri() . '/images');
+define('CSS_PATH', get_template_directory_uri().'/css');
+define('JS_PATH', get_template_directory_uri().'/js');
+define('IMAGE_PATH', get_template_directory_uri() . '/images');
 
 function enqueue_styles() {
 	wp_enqueue_style('bootstrap.min', CSS_PATH . '/bootstrap.min.css');
@@ -88,10 +88,63 @@ add_action('wp_enqueue_scripts', function() {
 	enqueue_scripts();
 });
 
+class About_Widget extends WP_Widget {
+
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		$widget_ops = array( 
+			'classname' => 'about_widget',
+			'description' => 'Keur about us',
+		);
+		parent::__construct( 'about_widget', 'About Widget', $widget_ops );
+	}
+
+		/**
+	 * Outputs the content of the widget
+	 *
+	 * @param array $args
+	 * @param array $instance
+	 */
+	public function widget( $args, $instance ) {
+		// outputs the content of the widget
+	}
+
+	/**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options
+	 */
+	public function form( $instance ) {
+		$title = empty($instance['title']) ? '' : $instance['title'];
+		$content = empty($instance['content']) ? '' : $instance['content'];
+		$title_id = $this->get_field_id('title');	
+		$content_id = $this->get_field_id('content');
+		echo '<input type="text" class="widefat" id="'.$this->get_field_id('title').
+			 '" name="'.$this->get_field_name('title').
+			 '" value="'.$title.'"/>'.
+			 '<textarea id="'.$this->get_field_id('content').
+			 '"class="widefat" name="'.$this->get_field_name('content').
+		 	 '">'.$content.'</textarea>';
+	}
+
+	/**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options
+	 * @param array $old_instance The previous options
+	 */
+	public function update( $new_instance, $old_instance ) {
+		return $new_instance;
+	}
+}
+
 add_action( 'widgets_init', function() {
+	register_widget( 'About_Widget' );
 	register_sidebar( array(
-		'name'          => 'About Widget',
-		'id'            => 'about_widget',
+		'name'          => 'About Widget Area',
+		'id'            => 'about_widget_area',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',

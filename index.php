@@ -15,60 +15,6 @@
               dynamic_sidebar('service_widget_area');
           endif;
       ?>
-<!--       <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-        <div class="service-icon">
-          <i class="fa fa-html5"></i>
-        </div>
-        <div class="service-info">
-          <h3>Website</h3>
-          <p>Kami membuat Website Company Profile, Website Event, Online Shop, Sistem Informasi Akademik dll</p>
-        </div>
-      </div>
-      <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="450ms">
-        <div class="service-icon">
-          <i class="fa fa-desktop"></i>
-        </div>
-        <div class="service-info">
-          <h3>Desktop Application</h3>
-          <p>Kami membuat Aplikasi Desktop seperti Aplikasi POS, Penggajihan, Inventory dll</p>
-        </div>
-      </div>
-      <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="550ms">
-        <div class="service-icon">
-          <i class="fa fa-android"></i>
-        </div>
-        <div class="service-info">
-          <h3>Android Application</h3>
-          <p>Untuk memenuhi kebutuhan Anda, maka kami juga mengembangkan android application</p>
-        </div>
-      </div>
-      <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="650ms">
-        <div class="service-icon">
-          <i class="fa fa-wordpress"></i>
-        </div>
-        <div class="service-info">
-          <h3>Wordpress Developer</h3>
-          <p>Sebagai pengembang Wordpress kami membuat Theme Wordpress dan Plugin serta bisa dipesan sesuai keinginan pelanggan</p>
-        </div>
-      </div>
-      <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="750ms">
-        <div class="service-icon">
-          <i class="fa fa-image"></i>
-        </div>
-        <div class="service-info">
-          <h3>Design Graphic</h3>
-          <p>Brand Identity, Logo, Brochure and Brand Packaging kami buat dengan karakter dan gaya yang sedang booming </p>
-        </div>
-      </div>
-      <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="850ms">
-        <div class="service-icon">
-          <i class="fa fa-camera"></i>
-        </div>
-        <div class="service-info">
-          <h3>Videographic</h3>
-          <p>Kami juga membuat video untuk kebutuhan promosi perusahaan, wedding dan bisa disesuaikan dengan pesanan</p>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>
@@ -76,7 +22,6 @@
 <section id="about-us" class="parallax">
 <div class="container">
   <div class="row">
-
       <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <?php 
               if ( is_active_sidebar( 'about_widget_area' ) ) : 
@@ -84,8 +29,6 @@
               endif;
         ?>
       </div>
-   
-
     </div>
   </div>
 </div>
@@ -171,7 +114,7 @@
         </div>
         <div class="col-sm-6">
           <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <p>Untuk memudahkan Anda dalam pemesanan, bisa menghubungi melalui email atau datang langsung di kantor kami.</p>
+            <p>If you want to hire us, please feel free to get in touch</p>
             <ul class="address">
             <?php 
                 if ( is_active_sidebar( 'contact_widget_area' ) ) : 

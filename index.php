@@ -19,6 +19,7 @@
   </div>
 </div>
 </section><!--/#services-->
+
 <section id="about-us" class="parallax">
 <div class="container">
   <div class="row">
@@ -31,7 +32,6 @@
       </div>
     </div>
   </div>
-</div>
 </section><!--/#about-us-->
 
 <section id="portfolio">

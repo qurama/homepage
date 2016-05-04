@@ -83,6 +83,7 @@ add_shortcode('team', function($atts) {
           </div>
           <div class="member-info">
             <h3><?php echo $a['name'];?></h3>
+            <hr />
             <h4><?php echo $a['job'];?></h4>       
           </div>
           <div class="social-icons">

@@ -87,18 +87,19 @@ add_shortcode('team', function($atts) {
           </div>
           <div class="social-icons">
             <ul>
+              <?php if(!empty($a['web'])):?>
+              	     <li class="contact-person"><a href="<?php echo $a['web'] ?>"><i class="fa fa-home"></i></a></li>
+              <?php endif;?>    
               <?php if(!empty($a['facebook'])):?>
-              	     <li><a class="facebook" href="<?php echo $a['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+              	     <li class="contact-person"><a href="<?php echo $a['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
               <?php endif;?>
               <?php if(!empty($a['twitter'])):?>
-              	     <li><a class="twitter" href="<?php echo $a['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+              	     <li class="contact-person"><a href="<?php echo $a['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
               <?php endif;?>
               <?php if(!empty($a['github'])):?>
-              	     <li><a class="github" href="<?php echo $a['github'] ?>"><i class="fa fa-github"></i></a></li>
+              	     <li class="contact-person"><a href="<?php echo $a['github'] ?>"><i class="fa fa-github"></i></a></li>
               <?php endif;?>
-              <?php if(!empty($a['web'])):?>
-              	     <li><a class="home" href="<?php echo $a['web'] ?>"><i class="fa fa-home"></i></a></li>
-              <?php endif;?>                
+            
             </ul>
           </div>
         </div>

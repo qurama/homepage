@@ -532,6 +532,7 @@ section {
   opacity: 1;
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+  background-color: #027db3;
 }
 
 .team-member {
@@ -972,6 +973,7 @@ ul.address {
 li {
   list-style: none;
 }
+
 /*Presets*/
 
 

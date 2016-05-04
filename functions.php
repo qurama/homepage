@@ -88,16 +88,16 @@ add_shortcode('team', function($atts) {
           <div class="social-icons">
             <ul>
               <?php if(!empty($a['web'])):?>
-              	     <li class="contact-person"><a href="<?php echo $a['web'] ?>"><i class="fa fa-home"></i></a></li>
+              	     <li class="contact-person"><a href="<?php echo $a['web'] ?>" target="_blank"><i class="fa fa-home"></i></a></li>
               <?php endif;?>    
               <?php if(!empty($a['facebook'])):?>
-              	     <li class="contact-person"><a href="<?php echo $a['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+              	     <li class="contact-person"><a href="<?php echo $a['facebook'] ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
               <?php endif;?>
               <?php if(!empty($a['twitter'])):?>
-              	     <li class="contact-person"><a href="<?php echo $a['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+              	     <li class="contact-person"><a href="<?php echo $a['twitter'] ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
               <?php endif;?>
               <?php if(!empty($a['github'])):?>
-              	     <li class="contact-person"><a href="<?php echo $a['github'] ?>"><i class="fa fa-github"></i></a></li>
+              	     <li class="contact-person"><a href="<?php echo $a['github'] ?>" target="_blank"><i class="fa fa-github"></i></a></li>
               <?php endif;?>
             
             </ul>

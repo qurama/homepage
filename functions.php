@@ -35,15 +35,14 @@ add_shortcode('slider', function($atts, $content) {
 
 add_shortcode('portofolio', function ($atts, $content) {
 	$a = shortcode_atts( array(
-		'preview' => '',
-		'detail' => '',
+		'image' => '',
 		'title' => ''
 	), $atts );
 	?>
 	<div class="col-sm-3">
       <div class="folio-item wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="400ms">
         <div class="folio-image">
-          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portofolio/preview' . '/' . $a['preview']; ?>" alt="">
+          <img class="img-responsive" src="<?php echo IMAGE_PATH . '/portofolio' . '/' . $a['image']; ?>" alt="<?php echo a['title']; ?>">
         </div>
         <div class="overlay">
           <div class="overlay-content">
@@ -53,9 +52,9 @@ add_shortcode('portofolio', function ($atts, $content) {
                 <p><?php echo $content;?></p>
               </div>
               <div class="folio-overview">
-                <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
+                <!-- <span class="folio-link"><a class="folio-read-more" href="#" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span> -->
                 <span class="folio-expand">
-                <a href="<?php echo IMAGE_PATH . '/portofolio/detail'. '/'.$a['detail']; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
+                <a href="<?php echo IMAGE_PATH . '/portofolio'. '/'.$a['image']; ?>" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a></span>
               </div>
             </div>
           </div>

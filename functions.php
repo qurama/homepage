@@ -72,7 +72,8 @@ add_shortcode('team', function($atts) {
 		'job' => '',
 		'facebook' => '',
 		'twitter' => '',
-		'github' => ''
+		'github' => '',
+		'web' => ''
 	  ), $atts );
 	  ?>
 	  <div class="col-sm-3">
@@ -94,7 +95,10 @@ add_shortcode('team', function($atts) {
               <?php endif;?>
               <?php if(!empty($a['github'])):?>
               	     <li><a class="github" href="<?php echo $a['github'] ?>"><i class="fa fa-github"></i></a></li>
-              <?php endif;?>        
+              <?php endif;?>
+              <?php if(!empty($a['web'])):?>
+              	     <li><a class="home" href="<?php echo $a['web'] ?>"><i class="fa fa-home"></i></a></li>
+              <?php endif;?>                
             </ul>
           </div>
         </div>
